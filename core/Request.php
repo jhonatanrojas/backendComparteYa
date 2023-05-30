@@ -33,7 +33,7 @@ class Request
             return $this->json[$key] ?? $default;
         }
 
-        return $_POST[$key] ?? $default;
+        return $_REQUEST[$key] ?? $default;
     }
 
     public function server($key, $default = null)

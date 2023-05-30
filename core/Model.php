@@ -135,7 +135,50 @@ class Model
         }
     }
 
+    public function update(array $data, array $conditions)
+    {
+        if ($this->autoUpdateTimestamp) {
+            $data[$this->updated_at] = date('Y-m-d H:i:s');
+        }
 
+        if (empty($conditions)) {
+            throw new \Exception("Las condiciones son requeridas");
+        }
+
+        $sql = "UPDATE " . $this->table . " SET " . $this->campos_update($data) . " WHERE " . $this->formatConditions($conditions);
+        $stmt = $this->db->prepare($sql);
+        $this->lastQuery = $sql;
+        // Combina los valores de los datos y las condiciones en un solo array
+        $values = array_merge($this->valores($data), $this->valores($conditions));
+
+        return $stmt->execute($values);
+    }
+
+    public function updateOrInsert(array $data, array $uniqueKeys)
+    {
+        // Primero, verificamos si ya existe un registro que coincida con las claves únicas
+
+    
+        foreach($uniqueKeys  as $key => $value ) {
+       
+            if (isset($data[$key])) {
+           
+                $this->where($key, $data[$key]);
+            } else {
+                throw new \Exception("La clave '{$key}' no está presente en los datos proporcionados.");
+            }
+        }
+        $existingRecord = $this->first();
+    
+        // Si el registro existe, lo actualizamos
+        if ($existingRecord) {
+            return $this->update($data, $uniqueKeys);
+        } else {
+            // Si no existe, lo insertamos
+            return $this->insert($data);
+        }
+    }
+    
 
 
     public function updateById($id, array $data)
@@ -176,24 +219,7 @@ class Model
         }
     }
 
-    public function update(array $data, array $conditions)
-    {
-        if ($this->autoUpdateTimestamp) {
-            $data[$this->updated_at] = date('Y-m-d H:i:s');
-        }
-
-        if (empty($conditions)) {
-            throw new \Exception("Las condiciones son requeridas");
-        }
-
-        $sql = "UPDATE " . $this->table . " SET " . $this->campos_update($data) . " WHERE " . $this->formatConditions($conditions);
-        $stmt = $this->db->prepare($sql);
-        $this->lastQuery = $sql;
-        // Combina los valores de los datos y las condiciones en un solo array
-        $values = array_merge($this->valores($data), $this->valores($conditions));
-
-        return $stmt->execute($values);
-    }
+ 
 
 
     protected function formatConditions(array $conditions)

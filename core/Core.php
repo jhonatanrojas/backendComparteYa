@@ -26,7 +26,11 @@ class Core
 	
 	
 
-        $routes = require __DIR__ . '/../routes/routes.php'; 
+        $routes = require __DIR__ . '/../routes/web.php'; 
+        $routes_api = require __DIR__ . '/../routes/api.php'; 
+      $routes = array_merge($routes, $routes_api);
+    // echo   json_encode($routes);
+   
         $dispatcher = simpleDispatcher(function (RouteCollector $r) use ($routes) {
             foreach ($routes as $route) {
                 if ($route[0] === 'GROUP') {

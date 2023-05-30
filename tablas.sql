@@ -46,8 +46,10 @@ CREATE TABLE social_network_authentications (
   id_social_network BIGINT ,
   id_user_social_network BIGINT,
   url_image_perfil VARCHAR(125),
+  nombre VARCHAR(125) DEFAULT '',
  user_name VARCHAR(125),
   token_autenticacion VARCHAR(255),
+  token_secret VARCHAR(255),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

@@ -75,3 +75,12 @@ function fecha_to_sql ($fecha_europea, $con_horas=true) {
     return $fecha_sql;
 
 }
+function url($name)
+{
+
+    // Aquí es donde agregas la URL base
+    $baseUrl = $_ENV['URL_BASE'];
+    return $baseUrl . $name;
+}
+
+

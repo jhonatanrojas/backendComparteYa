@@ -9,7 +9,7 @@ use models\ClientesModel;
 /**
  * Main controller. It will be responsible for site's main page behavior.
  */
-class InicioController extends Controller
+class MainController extends Controller
 {
 	//-----------------------------------------------------------------------
 	//        Methods
@@ -21,7 +21,7 @@ class InicioController extends Controller
 	{
 
 		
-		$this->loadTemplate("inicio", []);
+		$this->loadTemplate("mainView", []);
 	}
 
 

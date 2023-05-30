@@ -3,14 +3,17 @@
 
 
     <script type="text/javascript" >
-        var BASE_URL ="<?php echo BASE_URL ?>" 
+        const URL_BASE ="<?php echo $_ENV['URL_BASE'] ?>" 
 
     </script>
 
 
-<?php if (isset($librerias_js)): ?>
+<?php
+
+$version =$_ENV['APP_DEBUG'] ? time() : 1;
+if (isset($librerias_js)): ?>
 <?php foreach($librerias_js as $libreria_js): ?>
-    <script type="text/javascript" src="<?php echo  BASE_URL.$libreria_js; ?>"></script>
+    <script type="text/javascript" src="<?php echo  $_ENV['URL_BASE'].$libreria_js; ?>"></script>
 <?php endforeach; ?>
 <?php endif; ?>
 
@@ -29,6 +32,6 @@
 
 <?php if (isset($ficheros_js)): ?>
     <?php foreach($ficheros_js as $fichero_js): ?>
-        <script type="text/javascript" src="<?php echo BASE_URL.$fichero_js; ?>"></script>
+        <script type="text/javascript" src="<?php echo $_ENV['URL_BASE'].$fichero_js; ?> ?v=<?php echo $version ?> "></script>
     <?php endforeach; ?>
 <?php endif; ?>

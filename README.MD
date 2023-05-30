@@ -1,8 +1,8 @@
 #LightPHP-MVC
-##Proyecto PHP con MVC + VUE
+##Proyecto PHP con MVC 
 
 Este proyecto utiliza el patrón de diseño MVC (Modelo-Vista-Controlador), principios SOLID y DDD (Domain-Driven Design) para estructurar el código de manera limpia y mantenible. Utiliza el paquete `nikic/fast-route` para el manejo de rutas y `php-di/php-di` para la inyección de dependencias.
-Ademas incorpora vue.js y el manejador de paquetes vite.js
+
 
 es proyecto ligero que te permite escalar cualquier aplicacion
 
@@ -168,6 +168,10 @@ $page = isset($_GET['page']) && is_numeric($_GET['page']) && $_GET['page'] > 0 ?
 El método `paginate`  del siguiente modo:
 Primero, necesitarás instanciar tu modelo. Por ejemplo, si tienes un modelo de usuarios `(UserModel)`, lo instanciarías así:
 `$userModel = new UserModel();`
+
+
+ `updateOrInsert(array $data, array $uniqueKeys)`
+  - verifica si existe un registro, si no exite lo inserta de lo contrario actualiza
 
 Luego, puedes llamar al método `paginate` en tu modelo. Deberás pasar tres argumentos a este método:
 

@@ -37,7 +37,7 @@ export default defineConfig({
   root: 'src',
   base: process.env.APP_ENV === 'development'
     ? '/'
-    : '/appSocialMediaRestaurantGPT/backend/',
+    : '/',
 
   build: {
     // output dir for production build

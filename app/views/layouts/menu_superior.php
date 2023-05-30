@@ -1,94 +1,160 @@
-<div class="app-header header sticky ">
-   
-                <div class="container main-container">
-                    <div class="d-flex">
-                    <!-- sidebar-toggle 
-                        <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
-                      
-                        <a class="logo-horizontal " href="<?php echo BASE_URL?>">
-                            <img src="<?php echo BASE_URL ?>assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+<nav class="navbar navbar-expand navbar-light navbar-bg">
+    <a class="sidebar-toggle js-sidebar-toggle">
+        <i class="hamburger align-self-center"></i>
+    </a>
 
-                        </a>-->
-                        <div class="d-flex order-lg-2 ms-auto header-right-icons">
-                            <div class="dropdown d-none">
-                                <a href="javascript:void(0)" class="nav-link icon" data-bs-toggle="dropdown">
-                                    <i class="fe fe-search"></i>
-                                </a>
-                                <div class="dropdown-menu header-search dropdown-menu-start">
-                                    <div class="input-group w-100 p-2">
-                                        <input type="text" class="form-control" placeholder="Search....">
-                                        <div class="input-group-text btn btn-primary">
-                                            <i class="fe fe-search" aria-hidden="true"></i>
-                                        </div>
-                                    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="navbar-nav navbar-align">
+            <li class="nav-item dropdown">
+                <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+                    <div class="position-relative">
+                        <i class="align-middle" data-feather="bell"></i>
+                        <span class="indicator">4</span>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
+                    <div class="dropdown-menu-header">
+                        4 New Notifications
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <i class="text-danger" data-feather="alert-circle"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div class="text-dark">Update completed</div>
+                                    <div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
+                                    <div class="text-muted small mt-1">30m ago</div>
                                 </div>
                             </div>
-                            <!-- SEARCH -->
-                            <button class="navbar-toggler navresponsive-toggler d-lg-none ms-auto" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent-4"
-                                aria-controls="navbarSupportedContent-4" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon fe fe-more-vertical"></span>
-                            </button>
-                            <div class="navbar navbar-collapse responsive-navbar p-0">
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-                                    <div class="d-flex order-lg-2">
-                                        <div class="dropdown d-lg-none d-flex">
-                                            <a href="javascript:void(0)" class="nav-link icon"
-                                                data-bs-toggle="dropdown">
-                                                <i class="fe fe-search"></i>
-                                            </a>
-                                            <div class="dropdown-menu header-search dropdown-menu-start">
-                                                <div class="input-group w-100 p-2">
-                                                    <input type="text" class="form-control" placeholder="Search....">
-                                                    <div class="input-group-text btn btn-primary">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- COUNTRY -->
-                                     
-                                        <!-- SEARCH -->
-                                        <div class="dropdown  d-flex">
-                                            <a class="nav-link icon theme-layout nav-link-bg layout-setting">
-                                                <span class="dark-layout"><i class="fe fe-moon"></i></span>
-                                                <span class="light-layout"><i class="fe fe-sun"></i></span>
-                                            </a>
-                                        </div>
-                                        <!-- Theme-Layout -->
-                                        <div class="dropdown d-flex">
-                                            <a class="nav-link icon full-screen-link nav-link-bg">
-                                                <i class="fe fe-minimize fullscreen-button"></i>
-                                            </a>
-                                        </div>
-                               
-                                        <!-- SIDE-MENU -->
-                                        <div class="dropdown d-flex profile-1">
-                                            <a href="javascript:void(0)" data-bs-toggle="dropdown"
-                                                class="nav-link leading-none d-flex">
-                                                <img src="<?php echo BASE_URL?>assets/images/practisis.png" alt="profile-user"
-                                                    class="avatar  profile-user brround cover-image  img-thumbnail">
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                                <div class="drop-heading">
-                                                    <div class="text-center">
-                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold"></h5>
-                                                        <small class="text-muted">Usuario</small>
-                                                    </div>
-                                                </div>
-                                                <div class="dropdown-divider m-0"></div>
-                                            
-                                           
-                                                <a class="dropdown-item" href="<?php BASE_URL?>?url=Inicio/cerrar">
-                                                    <i class="dropdown-icon fe fe-alert-circle"></i>Cerrar Sesión
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <i class="text-warning" data-feather="bell"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div class="text-dark">Lorem ipsum</div>
+                                    <div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</div>
+                                    <div class="text-muted small mt-1">2h ago</div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <i class="text-primary" data-feather="home"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div class="text-dark">Login from 192.186.1.8</div>
+                                    <div class="text-muted small mt-1">5h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <i class="text-success" data-feather="user-plus"></i>
+                                </div>
+                                <div class="col-10">
+                                    <div class="text-dark">New connection</div>
+                                    <div class="text-muted small mt-1">Christina accepted your request.</div>
+                                    <div class="text-muted small mt-1">14h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="dropdown-menu-footer">
+                        <a href="#" class="text-muted">Show all notifications</a>
                     </div>
                 </div>
-            </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
+                    <div class="position-relative">
+                        <i class="align-middle" data-feather="message-square"></i>
+                    </div>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
+                    <div class="dropdown-menu-header">
+                        <div class="position-relative">
+                            4 New Messages
+                        </div>
+                    </div>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <img src="#" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+                                </div>
+                                <div class="col-10 ps-2">
+                                    <div class="text-dark">Vanessa Tucker</div>
+                                    <div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+                                    <div class="text-muted small mt-1">15m ago</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <img src="#" class="avatar img-fluid rounded-circle" alt="William Harris">
+                                </div>
+                                <div class="col-10 ps-2">
+                                    <div class="text-dark">William Harris</div>
+                                    <div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
+                                    <div class="text-muted small mt-1">2h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <img src="#" class="avatar img-fluid rounded-circle" alt="Christina Mason">
+                                </div>
+                                <div class="col-10 ps-2">
+                                    <div class="text-dark">Christina Mason</div>
+                                    <div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
+                                    <div class="text-muted small mt-1">4h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <div class="row g-0 align-items-center">
+                                <div class="col-2">
+                                    <img src="#" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+                                </div>
+                                <div class="col-10 ps-2">
+                                    <div class="text-dark">Sharon Lessman</div>
+                                    <div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
+                                    <div class="text-muted small mt-1">5h ago</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="dropdown-menu-footer">
+                        <a href="#" class="text-muted">Show all messages</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+                    <i class="align-middle" data-feather="settings"></i>
+                </a>
+
+                <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+                    <img src="#" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
+                    <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Log out</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
